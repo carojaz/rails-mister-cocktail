@@ -3,7 +3,8 @@
   padding: 0.5em 1em;
   margin: 0.5em;
   border-radius: 4px;
-  background-color: $green;
+  background: rgb(34,193,195);
+  background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(161,224,192,0.8439250700280112) 100%);
   color: white;
 
   &:hover {

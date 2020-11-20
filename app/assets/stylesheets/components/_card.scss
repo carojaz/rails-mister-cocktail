@@ -40,7 +40,8 @@ flex-wrap: wrap;
     border-radius: 4px;
     padding: 0.5em;
     vertical-align: middle;
-    background-color: $green;
+    background: rgb(34,193,195);
+  background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(161,224,192,0.8439250700280112) 100%);
 
     & h6 {
     text-align: center;

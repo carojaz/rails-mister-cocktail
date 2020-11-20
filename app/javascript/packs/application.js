@@ -11,9 +11,11 @@ require("channels")
 import 'bootstrap';
 
 import { toggleNewDoseForm } from './components/toggle_new_dose_form';
+import { loadDynamicBannerText } from './components/banner';
 
 document.addEventListener('turbolinks:load', () => {
   toggleNewDoseForm();
+  loadDynamicBannerText();
 })
 
 // Uncomment to copy all static images under ../images to the output folder and reference
