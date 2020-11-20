@@ -14,3 +14,10 @@ $headers-font: "Montserrat", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+h5 {
+  padding: 0.5em;
+  margin: 0.5em;
+  text-align: center;
+  border-bottom: 0.08em solid silver;
+}

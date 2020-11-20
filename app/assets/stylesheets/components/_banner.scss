@@ -1,0 +1,49 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  position: relative;
+  color: white;
+
+  & h1 {
+  font-family: 'Montserrat';
+  font-weight: lighter;
+  margin: 0;
+  font-size: 32px;
+  font-weight: bold;
+  }
+  & p {
+  font-family: 'Montserrat', 300px;
+  font-size: 20px;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+  & .card-add-ingredient {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    width: 16em;
+    border-radius: 4px;
+    padding: 0.5em;
+    vertical-align: middle;
+    background-color: $green;
+    opacity: 0.8;
+
+    & h6 {
+    text-align: center;
+    margin-top: 0.5em;
+    }
+
+    &:hover {
+        background-color: #DCAB79;
+    }
+  }
+  & .navigate {
+    position: absolute;
+    left: 1em;
+    top: 1em;
+    color: white;
+  }
+}
