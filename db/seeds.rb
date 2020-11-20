@@ -8,6 +8,10 @@
 require 'open-uri'
 require 'json'
 
+Cocktail.destroy_all
+Ingredient.destroy_all
+
+
 list_hash = JSON.load(open("https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list"))
 list_array = list_hash['drinks']
 puts list_array[0]["strIngredient1"]
