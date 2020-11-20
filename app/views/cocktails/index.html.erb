@@ -2,15 +2,20 @@
   <div class="container">
     <h1>Shake it up!</h1>
     <p>If by free spirits you mean open bar, then yes, I love free spirits</p>
-    <a class="btn" href="<%= new_cocktail_path %>">Add your favorite cocktail</a>
+    <a class="btn-cocktail" href="<%= new_cocktail_path %>">Add your favorite cocktail</a>
   </div>
 </div>
 <div class="container cards-home">
     <% @cocktails.each do |cocktail| %>
       <div class="card-cocktail">
-        <%= link_to cocktail_path(cocktail) do %>
-        <%= image_tag('https://images.unsplash.com/photo-1601924381523-019b78541b95?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60') %>
+      <%= link_to cocktail_path(cocktail) do %>
+
+        <% if cocktail.photo.attached? %>
+          <%= cl_image_tag cocktail.photo.key  %>
+        <% else %>
+          <%= image_tag('https://images.unsplash.com/photo-1573812808311-43b8a5ea358f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80') %>
         <% end %>
+      <% end %>
         <p class="card-text"><%= cocktail.name %></p>
       </div>
     <% end %>
