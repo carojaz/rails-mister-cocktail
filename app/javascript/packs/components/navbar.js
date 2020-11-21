@@ -1,7 +1,7 @@
 const initUpdateNavbarOnScroll = () => {
   const navbar = document.querySelector('.navbar');
   const form = document.querySelector("body > div.banner > div.navbar.fixed-top > form");
-  const bannerHeight = (window.innerHeight)*0.7;
+  const bannerHeight = (window.innerHeight)*0.8;
   if (navbar) {
     window.addEventListener('scroll', () => {
       if (window.scrollY >= bannerHeight) {
