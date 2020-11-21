@@ -8,9 +8,9 @@
   </div>
 </div>
 <div class="bar-bckg">
-  <div class="container cards-home">
+  <div class="container cards-home ">
       <% @cocktails.each do |cocktail| %>
-        <div class="card-cocktail">
+        <div class="card-cocktail zoom">
         <%= link_to cocktail_path(cocktail) do %>
 
           <% if cocktail.photo.attached? %>
