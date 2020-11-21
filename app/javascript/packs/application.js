@@ -10,6 +10,7 @@ require("channels")
 
 import 'bootstrap';
 
+import { toggleReview } from './components/toggle_review';
 import { toggleNewDoseForm } from './components/toggle_new_dose_form';
 import { loadDynamicBannerText } from './components/banner';
 import { initUpdateNavbarOnScroll } from './components/navbar';
@@ -24,6 +25,7 @@ document.addEventListener('turbolinks:load', () => {
   loadDynamicBannerText();
   initSelect2();
   initUpdateNavbarOnScroll();
+  toggleReview();
 })
 
 // Uncomment to copy all static images under ../images to the output folder and reference

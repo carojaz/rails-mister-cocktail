@@ -7,16 +7,32 @@
     </p>
   </div>
 </div>
-<div class="">
-  <div class="container">
-    <div class="img-cocktail">
-      <% if @cocktail.photo.attached? %>
-
-        <%= cl_image_tag @cocktail.photo.key  %>
-      <% else %>
-        <%= image_tag('https://images.unsplash.com/photo-1573812808311-43b8a5ea358f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80') %>
+<div class="img-cocktail">
+  <div class="average-review">
+    <% rates = [] %>
+    <% @cocktail.review_ids.each do |id| %>
+      <% rates << Review.find(id).rating %>
+    <% end %>
+    <% if rates.size == 0 %>
+      <% average = 0 %>
+    <% else %>
+      <% average = rates.inject{ |sum, el| sum + el }.to_f / rates.size %>
+      <% average.round.times do  %>
+        <i class="fas fa-star star-yellow"></i>
       <% end %>
-    </div>
+      <div id = "average"> <%= average.round(1) %> </div>
+    <% end %>
+  </div>
+  <% if @cocktail.photo.attached? %>
+    <%= cl_image_tag @cocktail.photo.key  %>
+  <% else %>
+    <%= image_tag('https://images.unsplash.com/photo-1573812808311-43b8a5ea358f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80') %>
+  <% end %>
+</div>
+<div class="cocktail-info">
+  <div class="container">
+    <h5>Description</h5>
+    <p><%= @cocktail.description.capitalize %></p>
     <h5>Ingredients list</h5>
     <div class="card-list">
       <ul>
@@ -43,6 +59,32 @@
     </div>
     <div class="add-dose-form d-none">
       <%= render 'doses/new.html.erb', cocktail: @cocktail, dose: @dose %>
+    </div>
+
+    <h5 mt-5>Reviews</h5>
+    <div class="review-list">
+      <ul>
+      <% @cocktail.reviews.each do |review| %>
+        <li>
+          <p><% review.rating.to_i.times do  %>
+            <i class="fas fa-star star-yellow"></i>
+          <% end %>
+          <% (5 - review.rating.to_i).times do %>
+            <i class="far fa-star star-grey"></i>
+          <% end %>
+          <%= review.content.capitalize %>
+          <%= link_to review, method: :delete, data: { confirm: 'Are you sure?'} do %>
+            <i class="far fa-trash-alt bottom"></i>
+          </p>
+        </li>
+          <% end %>
+      <% end %>
+      </ul>
+      <p class="btn-cocktail">Write a review  <i class="fas fa-plus-circle"></i></p>
+      <a name="reviews"></a>
+    </div>
+    <div class="review-form d-none">
+      <%= render 'reviews/form.html.erb', cocktail: @cocktail, review: @review %>
     </div>
   </div>
 </div>

@@ -10,7 +10,7 @@ class DosesController < ApplicationController
     if @dose.save
       redirect_to cocktail_path(@cocktail, anchor: 'ingredients'), notice: 'Dose added!'
     else
-      render "cocktails/show"
+      render "cocktails/show", notice: 'Sorry your dose is not valid, so we can\'t add it!'
     end
   end
 

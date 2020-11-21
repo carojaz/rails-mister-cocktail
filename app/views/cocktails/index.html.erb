@@ -8,19 +8,26 @@
   </div>
 </div>
 <div class="bar-bckg">
-  <div class="container cards-home ">
-      <% @cocktails.each do |cocktail| %>
-        <div class="card-cocktail zoom">
-        <%= link_to cocktail_path(cocktail) do %>
+  <% if @cocktails.size == 0 %>
+    <div class="container">
+      <h2>No Cocktail yet</h2>
+    </div>
+  <% else %>
+    <div class="container cards-home ">
+        <% @cocktails.each do |cocktail| %>
+          <div class="card-cocktail zoom">
+          <%= link_to cocktail_path(cocktail) do %>
 
-          <% if cocktail.photo.attached? %>
-            <%= cl_image_tag cocktail.photo.key  %>
-          <% else %>
-            <%= image_tag('https://images.unsplash.com/photo-1573812808311-43b8a5ea358f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80') %>
+            <% if cocktail.photo.attached? %>
+              <%= cl_image_tag cocktail.photo.key  %>
+            <% else %>
+              <%= image_tag('https://images.unsplash.com/photo-1573812808311-43b8a5ea358f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80') %>
+            <% end %>
           <% end %>
+            <p class="card-text"><%= cocktail.name %></p>
+          </div>
         <% end %>
-          <p class="card-text"><%= cocktail.name %></p>
-        </div>
-      <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>
+

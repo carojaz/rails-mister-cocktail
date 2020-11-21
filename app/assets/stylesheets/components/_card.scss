@@ -44,13 +44,31 @@
 }
 
 .img-cocktail {
-  & img {
-    margin: 1em;
-    border-radius: 4px;
-    width: 10em;
-    height: 15em;
-    float: left;
-    object-fit: cover;
+    position: relative;
+
+    & .average-review {
+      position : absolute;
+      left: 1.5em;
+      top: 1.5em;
+    }
+
+    & #average{
+      display:none;
+      color:white;
+      opacity:1;
+    }
+
+    &:hover #average {
+        display:block
+      }
+
+    & img {
+      margin: 1em;
+      border-radius: 4px;
+      width: 10em;
+      height: 15em;
+      float: left;
+      object-fit: cover;
   }
 }
 
@@ -62,7 +80,45 @@
   }
 }
 
+
 .card-list {
   display: flex;
 
+  & ul {
+    list-style: none;
+    text-align : center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    & li {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-content: space-between;
+      align-items: center;
+      width: 10em;
+      height: 10em;
+      padding: 0.5em;
+      margin: 0.2em;
+      border-radius: 4px;
+      border: 0.1em solid silver;
+      position: relative;
+
+      & .bottom {
+        position: absolute;
+        bottom: 1em;
+      }
+    }
+  }
+}
+
+.review-list {
+  & a {
+    text-decoration: none;
+
+  }
+  & ul {
+    list-style: none;
+  }
 }

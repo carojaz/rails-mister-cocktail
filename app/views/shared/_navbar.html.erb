@@ -2,5 +2,6 @@
   <%= link_to "/", class: "navbar-brand" do %>
     <%= image_tag "cocktail.svg" %>
     <% end %>
+  <%= render './shared/search_form' %>
   <a class="btn-cocktail" href="<%= new_cocktail_path %>">Add your favorite cocktail</a>
 </div>

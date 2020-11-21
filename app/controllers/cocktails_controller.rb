@@ -14,16 +14,22 @@ class CocktailsController < ApplicationController
 
   def index
     @cocktails = Cocktail.all
+    @search = params["search"]
+    if @search.present?
+      @name = @search["name"]
+      @cocktails = Cocktail.where("name ILIKE ?", "%#{@name}%")
+    end
   end
 
   def show
     @cocktail = Cocktail.find(params[:id])
     @dose = Dose.new
+    @review = Review.new
   end
 
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name, :photo)
+    params.require(:cocktail).permit(:name, :photo, :description)
   end
 end
