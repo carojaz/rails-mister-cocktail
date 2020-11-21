@@ -4,12 +4,7 @@
 
     <h1><i class="fas fa-cocktail"></i>   Let's make : <%= @cocktail.name %></h1>
   </div>
-  <div class="card-add-ingredient">
-    <h6 class="add-dose">Add new dose   <i class="fas fa-plus-circle"></i></h6>
-    <div class="add-dose-form d-none">
-      <%= render 'doses/new.html.erb', cocktail: @cocktail, dose: @dose %>
-    </div>
-  </div>
+
 </div>
 <div class="">
   <div class="container">
@@ -22,20 +17,31 @@
       <% end %>
     </div>
     <h5>Ingredients list</h5>
-    <ul>
-    <% @cocktail.doses.each do |dose| %>
-      <li>
-      <p><i class="fas fa-magic"></i></p>
-      <p><%= dose.description %>
-      <%= Ingredient.find(dose.ingredient_id).name %>
-      </p>
-      <p>
-      <%= link_to dose, method: :delete, data: { confirm: 'Are you sure?'} do %>
-      <i class="far fa-trash-alt bottom"></i>
-      </p>
-      </li>
+    <div class="card-list">
+      <ul>
+      <% @cocktail.doses.each do |dose| %>
+        <li>
+          <p><i class="fas fa-magic"></i></p>
+          <p><%= dose.description %>
+          <%= Ingredient.find(dose.ingredient_id).name %>
+          </p>
+          <p>
+          <%= link_to dose, method: :delete, data: { confirm: 'Are you sure?'} do %>
+            <i class="far fa-trash-alt bottom"></i>
+          </p>
+        </li>
+          <% end %>
       <% end %>
-    <% end %>
-    </ul>
+        <li class="add-dose">
+          <i class="fas fa-plus-circle"></i>
+          <p >Add new dose   </p>
+          <p></p>
+        </li>
+      </ul>
+      <a name="ingredients"></a>
+    </div>
+    <div class="add-dose-form d-none">
+      <%= render 'doses/new.html.erb', cocktail: @cocktail, dose: @dose %>
+    </div>
   </div>
 </div>

@@ -1,8 +1,8 @@
 .cards-home {
-display: flex;
-flex-direction: row;
-justify-content: center;
-flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
 
   & .card-cocktail {
     border: solid white 0.1em;
@@ -31,27 +31,17 @@ flex-wrap: wrap;
 }
 
 .card-add-ingredient {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    top: 9em;
-    right: 1em;
-    width: 16em;
-    border-radius: 4px;
-    padding: 0.5em;
-    vertical-align: middle;
-    background: rgb(34,193,195);
+  display: flex;
+  align-items: center;
+  top: 9em;
+  right: 1em;
+  width: 16em;
+  border-radius: 4px;
+  padding: 0.5em;
+  vertical-align: middle;
+  background: rgb(34,193,195);
   background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(161,224,192,0.8439250700280112) 100%);
-
-    & h6 {
-    text-align: center;
-    margin-top: 0.5em;
-    }
-
-    &:hover {
-        background-color: #DCAB79;
-    }
-  }
+}
 
 .img-cocktail {
   & img {
@@ -62,4 +52,17 @@ flex-wrap: wrap;
     float: left;
     object-fit: cover;
   }
+}
+
+.add-dose {
+  background: rgb(34,193,195);
+
+  &:hover {
+  background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(161,224,192,0.8439250700280112) 100%);
+  }
+}
+
+.card-list {
+  display: flex;
+
 }

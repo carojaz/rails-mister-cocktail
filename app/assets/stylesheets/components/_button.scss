@@ -13,3 +13,21 @@
     color: white;
   }
 }
+
+.btn-cocktail-neg {
+  border: solid transparent;
+  padding: 0.5em 1em;
+  margin: 0.5em;
+  border-radius: 4px;
+  background: white;
+  font-weight: bolder;
+  color: rgb(34,193,195);
+
+  &:hover {
+    background: radial-gradient(circle, rgba(34,193,195,1) 0%, rgba(161,224,192,0.8439250700280112) 100%);
+    color: rgb(34,193,195);
+    background-color: #A1E0C0;
+    text-decoration: none;
+    color: white;
+  }
+}

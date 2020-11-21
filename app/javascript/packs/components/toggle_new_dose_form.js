@@ -4,6 +4,7 @@ const toggleNewDoseForm = () => {
     zone.addEventListener('click', (event) => {
       const formElement = document.querySelector('.add-dose-form');
       formElement.classList.toggle('d-none');
+      formElement.scrollIntoView(true);
 
     } )
   }
