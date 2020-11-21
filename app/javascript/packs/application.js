@@ -12,6 +12,7 @@ import 'bootstrap';
 
 import { toggleNewDoseForm } from './components/toggle_new_dose_form';
 import { loadDynamicBannerText } from './components/banner';
+import { initUpdateNavbarOnScroll } from './components/navbar';
 import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener("turbolinks:load", function() {
@@ -22,6 +23,7 @@ document.addEventListener('turbolinks:load', () => {
   toggleNewDoseForm();
   loadDynamicBannerText();
   initSelect2();
+  initUpdateNavbarOnScroll();
 })
 
 // Uncomment to copy all static images under ../images to the output folder and reference
