@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :cocktails, only: [:index, :show, :new, :create] do
     # doses : show, new, create, delete(non nested)
     resources :doses, only: [:new, :create]
-    resource :reviews, only: [:index, :show, :new, :create, :edit, :update]
+    resource :reviews, only: [:index, :show, :new, :create]
   end
 
   resources :doses, only: [:destroy]

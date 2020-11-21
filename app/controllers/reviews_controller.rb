@@ -22,20 +22,20 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
   end
 
-  def edit
-    review_id = params[:id]
-    @review = Review.find(review_id)
-  end
+  # def edit
+  #   review_id = params[:id]
+  #   @review = Review.find(review_id)
+  # end
 
-  def update
-    @cocktail = Cocktail.find(params[:cocktail_id])
-    @review = Review.find(params[:id])
-    if @review.update(review_params)
-      redirect_to cocktail_path(@cocktail, anchor: 'reviews'), notice: 'Review updated!'
-    else
-      render "cocktails/show", notice: 'Sorry your update is not valid, so we can\'t add it!'
-    end
-  end
+  # def update
+  #   @cocktail = Cocktail.find(params[:cocktail_id])
+  #   @review = Review.find(params[:id])
+  #   if @review.update(review_params)
+  #     redirect_to cocktail_path(@cocktail, anchor: 'reviews'), notice: 'Review updated!'
+  #   else
+  #     render "cocktails/show", notice: 'Sorry your update is not valid, so we can\'t add it!'
+  #   end
+  # end
 
   def destroy
     review_id = params[:id]
